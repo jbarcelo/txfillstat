@@ -1,0 +1,38 @@
+==========================================================
+ Skip to step 3 if you don't have a libbitcoin blockchain
+==========================================================
+
+1. Generate the raw data needed. It's formatted for direct importing
+into Python.
+
+  $ g++ -ggdb collisions.cpp $(pkg-config --cflags --libs libbitcoin) -lgmp
+  $ ./a.out | tee buckets_data.py
+
+2. total_tx_sizes.py will show us the cumulative raw size of all transactions
+in the blockchain (needs a libbitcoin blockchain - this step can be skipped).
+
+  $ python total_tx_sizes.py
+  11719793765 bytes
+
+That's around 12 Gb.
+
+3. Display data in a more human friendly format.
+
+  $ python display_data.py
+
+The numbers are the % of colliding txs in a bucket. If 5% of txs share a
+hash table bucket with another 2 txs then we will see:
+
+  3: 5.00 %
+
+NOTE: The empty rate and the fill rate for the first bucket seem to match
+too closely to seem like coincidence. Is this a bug in my code's logic or some
+underlying property?
+
+4. Generate the data for the graphs. We leave out the empty bucket otherwise
+it skews the plots too much and makes them difficult to examine.
+
+  $ python reformat.py
+
+Paste this data into graph/graphs.js under the variable called 'datasets'
+
