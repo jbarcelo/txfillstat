@@ -16,5 +16,5 @@ for bucket_size in bucket_sizes:
             print "  %.2f %% of buckets are empty" % empty_percent
             continue
         percent_filled = (fill * i * 100.0) / total_tx
-        print "  %s: %.2f %%" % (i, percent_filled)
+        print "  %s: %.2f %% (%s)" % (i, percent_filled, fill)
 
