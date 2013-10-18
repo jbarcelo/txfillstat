@@ -1,0 +1,28 @@
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="Chart.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h3>1 million transactions</h3>
+
+<canvas id="myChart" width="1024" height="800"></canvas>
+
+<p>Blue bars are write speed. White bars are read speed.</p>
+
+<p>Bottom axis is number of buckets for hashtable, and the disk size the
+header occupied.</p>
+
+<p>Test is with 971698 txs (443973598 bytes). We expect slower performance
+for LevelDB BTREE at higher counts, whereas the hashtree should remain constant
+with an unchanging load factor (number txs / number buckets).</p>
+
+<p>We expect random access for Bitcoin transactions, and the dataset is huge,
+so cache perfomance is not important for us.</p>
+
+</body>
+<script type="text/javascript" src="speeds.js"></script>
+</html>
