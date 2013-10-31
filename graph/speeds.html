@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<h3>1 million transactions</h3>
+<h3>1 million transactions (read-write speed)</h3>
 
-<canvas id="myChart" width="1024" height="800"></canvas>
+<canvas id="myChart" width="1024" height="600"></canvas>
 
 <p>Blue bars are write speed. White bars are read speed.</p>
 
@@ -22,6 +22,10 @@ with an unchanging load factor (number txs / number buckets).</p>
 
 <p>We expect random access for Bitcoin transactions, and the dataset is huge,
 so cache perfomance is not important for us.</p>
+
+<h3>26 million transactions (read speed)</h3>
+
+<canvas id="myChart2" width="1024" height="600"></canvas>
 
 </body>
 <script type="text/javascript" src="speeds.js"></script>
