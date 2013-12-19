@@ -17,7 +17,7 @@ bin_number(x) = floor(x/bin_width)
 rounded(x) = bin_width * ( bin_number(x) + 0.5 )
 
 set xrange [0:1500]
-set yrange [0:5000000]
+set yrange [0:10000000]
 set terminal png size 1000,800 enhanced font "Helvetica,20"
 set output 'tx_sizes.png'
 plot 'tx_sizes.data' using (rounded($1)):(1) smooth frequency with boxes
