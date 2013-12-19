@@ -10,7 +10,7 @@ set yzeroaxis
 set boxwidth 0.05 absolute
 set style fill solid 1.0 noborder
 
-bin_width = 0.1;
+bin_width = 20;
 
 bin_number(x) = floor(x/bin_width)
 
