@@ -1,6 +1,6 @@
 import leveldb
 db = leveldb.LevelDB("blockchain/tx")
-cumulative = False
+cumulative = True
 step = 50
 # Vast majority of txs are below 2k bytes
 categories = [0] * (2000 / step)
@@ -32,5 +32,8 @@ for i, freq in enumerate(categories):
     labels.append(str(i * step))
 print labels, ","
 print "data:"
-print categories
+data = []
+for freq in categories:
+    data.append(float(freq) / tx_total)
+print data
 
