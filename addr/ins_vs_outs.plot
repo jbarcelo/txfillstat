@@ -2,5 +2,5 @@
 #set yrange [0:10000000]
 set terminal png size 1000,800 enhanced font "Helvetica,20"
 set output 'ins_vs_outs.png'
-plot 'data.txt' using 1:2
+plot 'ins_vs_outs.data' using 1:2
 
