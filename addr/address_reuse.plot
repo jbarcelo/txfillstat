@@ -3,6 +3,7 @@ set output "address_reuse.png"
 set xlabel "times used (capped at 100)"
 set ylabel "number of addresses"
 set xrange [0:100]
+set title "Address re-use in the first 107333 blocks"
 binwidth=1
 bin(x,width)=width*floor(x/width)
 set table 'address_reuse.table'
