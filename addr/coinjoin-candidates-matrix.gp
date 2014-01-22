@@ -1,8 +1,7 @@
-#set term postscript enhanced eps color "NimbusSanL-Regu,17" fontfile "/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb"
-set terminal png
+set term postscript enhanced eps color 
 set output "coinjoin-candidates-matrix.eps"
-set size ratio 0.5
-set title "Ins and Outs for CoinJoin candidate transactions"
+set size 0.65,0.65
+#set title "Ins and Outs for CoinJoin candidate transactions"
 
 set xlabel "outs"
 set ylabel "ins"
@@ -12,7 +11,7 @@ set tic scale 0
 set palette gray
 set palette negative
 
-set cbrange [1:8000]
+set cbrange [10:10000]
 set logscale cb
 #unset cbtics
 
